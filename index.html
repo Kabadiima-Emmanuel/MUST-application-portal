@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <!-- Keeps the layout readable on phones, tablets, and desktop screens. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign in | MUST Admissions Portal</title>
+  <!-- Both pages share this stylesheet to maintain one consistent design. -->
+  <link rel="stylesheet" href="designs.css" />
+</head>
+<body>
+  <main class="page">
+    <!-- The auth-card is the centered panel containing the sign-in form. -->
+    <section class="auth-card" aria-labelledby="login-title">
+      <!-- Keep logo.png in this same folder for the image to appear. -->
+      <img class="logo" src="logo.png" alt="Mbarara University of Science and Technology logo" />
+      <p class="portal-name">MUST Admissions Portal</p>
+      <h1 id="login-title">Welcome back</h1>
+      <p class="intro">Sign in to continue to your university application.</p>
+
+      <!-- Required fields receive basic browser-side validation. -->
+      <!-- action="#" is a placeholder; connect it to a server endpoint for real sign-in. -->
+      <form action="#">
+        <label for="login-email">
+          Email address
+          <input id="login-email" name="email" type="email" placeholder="you@example.com" autocomplete="email" required />
+        </label>
+
+        <label for="login-password">
+          Password
+          <input id="login-password" name="password" type="password" placeholder="Enter your password" autocomplete="current-password" required />
+        </label>
+
+        <div class="form-row">
+          <label class="check" for="remember-me">
+            <input id="remember-me" name="remember" type="checkbox" />
+            Remember me
+          </label>
+          <!-- Replace #reset with the real password recovery page when available. -->
+          <a href="#reset">Forgot password?</a>
+        </div>
+
+        <button type="submit">Sign in</button>
+      </form>
+
+      <p class="alternate">New applicant? <a href="createAccount.html">Create an account</a></p>
+    </section>
+
+    <footer>© 2026 Mbarara University of Science and Technology</footer>
+  </main>
+</body>
+</html>
