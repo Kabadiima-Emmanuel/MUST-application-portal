@@ -1,0 +1,266 @@
+/*
+ * MUST Admissions Portal — shared visual styles
+ * ------------------------------------------------------------
+ * This file controls the appearance of both sign-in and account
+ * creation pages. Shared styles keep the pages visually consistent.
+ */
+
+/* Brand colors and reusable values. Change these to retheme the portal. */
+:root {
+  --must-blue: #173b72;
+  --must-blue-dark: #102b52;
+  --must-gold: #d8ad35;
+  --ink: #1d2b3a;
+  --muted: #667487;
+  --line: #d7e0ea;
+  --surface: #ffffff;
+  --page: #f2f5f9;
+  --focus: #dce8fb;
+}
+
+/* Make element sizing predictable and remove the browser's default body gap. */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  color: var(--ink);
+  background:
+    radial-gradient(ellipse at top left, rgba(216, 173, 53, 0.10), transparent 36rem),
+    var(--page);
+  font: 15px/1.55 "Segoe UI", Arial, sans-serif;
+}
+
+/* The page wrapper keeps the form centered and the footer near the bottom. */
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 36px 18px 22px;
+}
+
+/* The card gives the form a formal, contained university-portal layout. */
+.auth-card {
+  position: relative;
+  width: min(100%, 470px);
+  padding: 34px 38px 32px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-top: 4px solid var(--must-gold);
+  border-radius: 10px;
+  background: var(--surface);
+  box-shadow: 0 16px 42px rgba(20, 43, 75, 0.09);
+  text-align: center;
+}
+
+/* A small gold accent line reinforces the university color palette. */
+.auth-card::after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--must-blue), var(--must-gold));
+  content: "";
+}
+
+.logo {
+  display: block;
+  width: 82px;
+  height: 82px;
+  margin: 0 auto 12px;
+  object-fit: contain;
+}
+
+/* The portal label is intentionally compact, like an official portal heading. */
+.portal-name {
+  margin: 0 0 22px;
+  color: var(--must-blue);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 0;
+  color: var(--must-blue-dark);
+  font-size: clamp(25px, 4vw, 30px);
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 1.2;
+}
+
+.intro {
+  max-width: 330px;
+  margin: 10px auto 26px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* Forms use a simple grid so each field has consistent spacing. */
+form {
+  display: grid;
+  gap: 17px;
+  text-align: left;
+}
+
+label {
+  display: grid;
+  gap: 7px;
+  color: #34445a;
+  font-size: 13px;
+  font-weight: 650;
+}
+
+input {
+  width: 100%;
+  min-width: 0;
+  height: 46px;
+  padding: 0 13px;
+  border: 1px solid #c5d0de;
+  border-radius: 6px;
+  background: #fff;
+  color: var(--ink);
+  font: inherit;
+  font-size: 14px;
+  transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+input::placeholder {
+  color: #8995a5;
+}
+
+input:focus-visible {
+  outline: 3px solid var(--focus);
+  border-color: var(--must-blue);
+}
+
+/* Keep the first and last name side by side on wider screens. */
+.name-fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 13px;
+}
+
+.form-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 13px;
+}
+
+.form-row > a,
+.check a,
+.alternate a {
+  color: var(--must-blue);
+  font-weight: 650;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.form-row > a:hover,
+.check a:hover,
+.alternate a:hover {
+  color: var(--must-blue-dark);
+}
+
+/* Checkbox labels are laid out horizontally instead of like text fields. */
+.check {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.check input {
+  flex: 0 0 16px;
+  width: 16px;
+  height: 16px;
+  margin: 2px 0 0;
+  accent-color: var(--must-blue);
+}
+
+button {
+  min-height: 47px;
+  padding: 10px 16px;
+  border: 0;
+  border-radius: 6px;
+  background: var(--must-blue);
+  color: #fff;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 750;
+  cursor: pointer;
+  transition: background-color 160ms ease, transform 160ms ease;
+}
+
+button:hover {
+  background: var(--must-blue-dark);
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
+
+.alternate {
+  margin: 25px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+footer {
+  margin-top: 24px;
+  color: #788596;
+  font-size: 11px;
+  text-align: center;
+}
+
+/* On narrow phones, stack name fields and reduce card padding. */
+@media (max-width: 430px) {
+  .page {
+    justify-content: flex-start;
+    padding: 22px 12px;
+  }
+
+  .auth-card {
+    padding: 28px 22px 28px;
+  }
+
+  .name-fields {
+    grid-template-columns: 1fr;
+  }
+
+  .form-row {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+}
+
+/* Respect visitors who prefer less motion in interface transitions. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
